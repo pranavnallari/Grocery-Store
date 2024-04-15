@@ -37,11 +37,11 @@ function displayCart() {
             row.innerHTML = `
                 <td>${item.product}</td>
                 <td>
-                    <input type="number" min="0" value="${item.quantity}" data-index="${index}" class="quantity-input" />
+                    <input type="number" min="0" value="${item.quantity}" data-index="${i}" class="quantity-input" />
                 </td>
                 <td>$${item.price.toFixed(2)}</td>
                 <td>$${totalPrice.toFixed(2)}</td>
-                <td><button class="remove-btn" data-index="${index}">Remove</button></td>
+                <td><button class="remove-btn" data-index="${i}">Remove</button></td>
             `;
             tbody.appendChild(row);
         };
