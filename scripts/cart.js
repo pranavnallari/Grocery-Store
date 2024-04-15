@@ -30,6 +30,7 @@ function displayCart() {
         cartContents.appendChild(thead);
         const tbody = document.createElement('tbody');
         for (let i = 0; i < cart.length; i++) {
+            const index = i
             const item = cart[i];
             const totalPrice = item.quantity * item.price;
             totalAmount += totalPrice;
@@ -37,11 +38,11 @@ function displayCart() {
             row.innerHTML = `
                 <td>${item.product}</td>
                 <td>
-                    <input type="number" min="0" value="${item.quantity}" data-index="${i}" class="quantity-input" />
+                    <input type="number" min="0" value="${item.quantity}" data-index="${index}" class="quantity-input" />
                 </td>
                 <td>$${item.price.toFixed(2)}</td>
                 <td>$${totalPrice.toFixed(2)}</td>
-                <td><button class="remove-btn" data-index="${i}">Remove</button></td>
+                <td><button class="remove-btn" data-index="${index}">Remove</button></td>
             `;
             tbody.appendChild(row);
         };
